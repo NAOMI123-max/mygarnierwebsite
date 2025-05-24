@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Garnier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <!-- Copy the same navigation from index.html -->
+    </nav>
+
+    <!-- Search Modal (same as index.html) -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+        <!-- Copy the same modal from index.html -->
+    </div>
+
+    <!-- Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h2 id="categoryTitle">All Products</h2>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
+                            Sort By
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item sort-option" href="#" data-sort="name-asc">Name (A-Z)</a></li>
+                            <li><a class="dropdown-item sort-option" href="#" data-sort="name-desc">Name (Z-A)</a></li>
+                            <li><a class="dropdown-item sort-option" href="#" data-sort="price-asc">Price (Low to High)</a></li>
+                            <li><a class="dropdown-item sort-option" href="#" data-sort="price-desc">Price (High to Low)</a></li>
+                            <li><a class="dropdown-item sort-option" href="#" data-sort="rating-desc">Highest Rated</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Filter Products</h5>
+                            <div class="mb-3">
+                                <h6>Categories</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input category-filter" type="checkbox" value="all" id="filter-all" checked>
+                                    <label class="form-check-label" for="filter-all">All Categories</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input category-filter" type="checkbox" value="face-care" id="filter-face">
+                                    <label class="form-check-label" for="filter-face">Face Care</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input category-filter" type="checkbox" value="eye-care" id="filter-eye">
+                                    <label class="form-check-label" for="filter-eye">Eye Care</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input category-filter" type="checkbox" value="cleansers" id="filter-cleansers">
+                                    <label class="form-check-label" for="filter-cleansers">Cleansers</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input category-filter" type="checkbox" value="moisturizers" id="filter-moisturizers">
+                                    <label class="form-check-label" for="filter-moisturizers">Moisturizers</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Price Range</h6>
+                                <div class="range-slider">
+                                    <input type="range" class="form-range" min="0" max="50" step="5" id="priceRange">
+                                    <div class="d-flex justify-content-between">
+                                        <span>$0</span>
+                                        <span>$50</span>
+                                    </div>
+                                    <div class="mt-2">
+                                        Selected: <span id="priceRangeValue">$0 - $50</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6>Rating</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input rating-filter" type="checkbox" value="5" id="filter-rating-5">
+                                    <label class="form-check-label" for="filter-rating-5">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input rating-filter" type="checkbox" value="4" id="filter-rating-4">
+                                    <label class="form-check-label" for="filter-rating-4">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star"></i> & Up
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input rating-filter" type="checkbox" value="3" id="filter-rating-3">
+                                    <label class="form-check-label" for="filter-rating-3">
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i> & Up
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary w-100" id="applyFilters">Apply Filters</button>
+                            <button class="btn btn-sm btn-outline-secondary w-100 mt-2" id="resetFilters">Reset Filters</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row product-list">
+                        <!-- Products will be loaded via JavaScript -->
+                    </div>
+                    <nav aria-label="Product pagination" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <!-- Copy the same footer from index.html -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
