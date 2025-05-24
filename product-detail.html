@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Garnier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <!-- Copy the same navigation from index.html -->
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="product-gallery">
+                        <div class="main-image mb-3">
+                            <img src="https://via.placeholder.com/600x600?text=Product+Image" alt="Product Image" class="img-fluid rounded" id="mainProductImage">
+                        </div>
+                        <div class="thumbnail-container d-flex">
+                            <div class="thumbnail me-2">
+                                <img src="https://via.placeholder.com/100x100?text=Thumb+1" alt="Thumbnail 1" class="img-thumbnail thumbnail-image active">
+                            </div>
+                            <div class="thumbnail me-2">
+                                <img src="https://via.placeholder.com/100x100?text=Thumb+2" alt="Thumbnail 2" class="img-thumbnail thumbnail-image">
+                            </div>
+                            <div class="thumbnail me-2">
+                                <img src="https://via.placeholder.com/100x100?text=Thumb+3" alt="Thumbnail 3" class="img-thumbnail thumbnail-image">
+                            </div>
+                            <div class="thumbnail">
+                                <img src="https://via.placeholder.com/100x100?text=Thumb+4" alt="Thumbnail 4" class="img-thumbnail thumbnail-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
+                        </ol>
+                    </nav>
+                    <h1 id="productTitle">Micellar Cleansing Water</h1>
+                    <div class="rating mb-3">
+                        <span class="stars">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star-half-alt text-warning"></i>
+                        </span>
+                        <span class="ms-2">(42 reviews)</span>
+                    </div>
+                    <div class="price mb-4">
+                        <span class="h4 text-primary">$9.99</span>
+                        <span class="text-muted text-decoration-line-through ms-2">$12.99</span>
+                        <span class="badge bg-danger ms-2">23% OFF</span>
+                    </div>
+                    <p class="mb-4" id="productDescription">Gently removes makeup and cleanses skin without rubbing. Suitable for all skin types, including sensitive skin. No rinsing required.</p>
+                    
+                    <div class="mb-4">
+                        <h5>Key Benefits:</h5>
+                        <ul class="benefits-list">
+                            <li>Removes makeup, even waterproof</li>
+                            <li>Cleanses and refreshes skin</li>
+                            <li>No harsh rubbing required</li>
+                            <li>Hypoallergenic and dermatologically tested</li>
+                            <li>Paraben-free and alcohol-free</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="quantity" class="form-label">Quantity:</label>
+                        <div class="input-group quantity-selector" style="width: 150px;">
+                            <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
+                            <input type="number" class="form-control text-center quantity-input" value="1" min="1" max="10">
+                            <button class="btn btn-outline-secondary plus-btn" type="button">+</button>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <button class="btn btn-primary me-3 add-to-cart-btn">Add to Cart</button>
+                        <button class="btn btn-outline-secondary wishlist-btn">
+                            <i class="far fa-heart"></i> Wishlist
+                        </button>
+                    </div>
+                    
+                    <div class="product-meta">
+                        <div class="mb-2"><strong>SKU:</strong> <span>GAR-MCW-125</span></div>
+                        <div class="mb-2"><strong>Category:</strong> <a href="products.html?category=cleansers">Cleansers</a></div>
+                        <div class="mb-2"><strong>Tags:</strong> 
+                            <a href="#" class="badge bg-light text-dark">cleanser</a>
+                            <a href="#" class="badge bg-light text-dark">makeup remover</a>
+                            <a href="#" class="badge bg-light text-dark">sensitive skin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button">Description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="ingredients-tab" data-bs-toggle="tab" data-bs-target="#ingredients" type="button">Ingredients</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button">Reviews</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button">Shipping & Returns</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-3 border border-top-0 rounded-bottom" id="productTabsContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <h4>Product Description</h4>
+                            <p>Garnier Micellar Cleansing Water gently removes makeup and cleanses skin in one step without rubbing. The micelles act like a magnet to lift away makeup, dirt and impurities without harsh rubbing. No rinsing required. Suitable for all skin types, including sensitive skin.</p>
+                            <p>Dermatologically tested. Hypoallergenic. Paraben-free. Alcohol-free. Fragrance-free.</p>
+                            <h5 class="mt-4">How to Use:</h5>
+                            <ol>
+                                <li>Apply to a cotton pad until soaked</li>
+                                <li>Gently wipe over face, eyes and lips</li>
+                                <li>No need to rinse</li>
+                                <li>Use morning and evening</li>
+                            </ol>
+                        </div>
+                        <div class="tab-pane fade" id="ingredients" role="tabpanel">
+                            <h4>Ingredients</h4>
+                            <p>Aqua/Water, Hexylene Glycol, Glycerin, Disodium Cocoamphodiacetate, Disodium EDTA, Poloxamer 184, Polyaminopropyl Biguanide.</p>
+                        </div>
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <h4>Customer Reviews</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="review-summary mb-4">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="average-rating h2 me-3">4.5</div>
+                                            <div>
+                                                <div class="stars mb-1">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                                </div>
+                                                <div class="text-muted">Based on 42 reviews</div>
+                                            </div>
+                                        </div>
+                                        <div class="rating-bars">
+                                            <div class="rating-bar d-flex align-items-center mb-2">
+                                                <div class="me-2">5 <i class="fas fa-star text-warning"></i></div>
+                                                <div class="progress flex-grow-1" style="height: 10px;">
+                                                    <div class="progress-bar bg-warning" style="width: 70%"></div>
+                                                </div>
+                                                <div class="ms-2">70%</div>
+                                            </div>
+                                            <div class="rating-bar d-flex align-items-center mb-2">
+                                                <div class="me-2">4 <i class="fas fa-star text-warning"></i></div>
+                                                <div class="progress flex-grow-1" style="height: 10px;">
+                                                    <div class="progress-bar bg-warning" style="width: 20%"></div>
+                                                </div>
+                                                <div class="ms-2">20%</div>
+                                            </div>
+                                            <div class="rating-bar d-flex align-items-center mb-2">
+                                                <div class="me-2">3 <i class="fas fa-star text-warning"></i></div>
+                                                <div class="progress flex-grow-1" style="height: 10px;">
+                                                    <div class="progress-bar bg-warning" style="width: 5%"></div>
+                                                </div>
+                                                <div class="ms-2">5%</div>
+                                            </div>
+                                            <div class="rating-bar d-flex align-items-center mb-2">
+                                                <div class="me-2">2 <i class="fas fa-star text-warning"></i></div>
+                                                <div class="progress flex-grow-1" style="height: 10px;">
+                                                    <div class="progress-bar bg-warning" style="width: 3%"></div>
+                                                </div>
+                                                <div class="ms-2">3%</div>
+                                            </div>
+                                            <div class="rating-bar d-flex align-items-center">
+                                                <div class="me-2">1 <i class="fas fa-star text-warning"></i></div>
+                                                <div class="progress flex-grow-1" style="height: 10px;">
+                                                    <div class="progress-bar bg-warning" style="width: 2%"></div>
+                                                </div>
+                                                <div class="ms-2">2%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="write-review">
+                                        <h5>Write a Review</h5>
+                                        <form id="reviewForm">
+                                            <div class="mb-3">
+                                                <label class="form-label">Your Rating</label>
+                                                <div class="rating-input">
+                                                    <i class="far fa-star" data-rating="1"></i>
+                                                    <i class="far fa-star" data-rating="2"></i>
+                                                    <i class="far fa-star" data-rating="3"></i>
+                                                    <i class="far fa-star" data-rating="4"></i>
+                                                    <i class="far fa-star" data-rating="5"></i>
+                                                    <input type="hidden" name="rating" id="selectedRating" value="0">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="reviewTitle" class="form-label">Review Title</label>
+                                                <input type="text" class="form-control" id="reviewTitle" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="reviewText" class="form-label">Your Review</label>
+                                                <textarea class="form-control" id="reviewText" rows="4" required></textarea>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="reviewerName" class="form-label">Your Name</label>
+                                                <input type="text" class="form-control" id="reviewerName" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="customer-reviews mt-5">
+                                <h5 class="mb-4">Customer Reviews</h5>
+                                <div class="review">
+                                    <div class="review-header d-flex justify-content-between mb-2">
+                                        <div>
+                                            <strong>Sarah J.</strong>
+                                            <div class="stars">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">2 weeks ago</div>
+                                    </div>
+                                    <h6>Best makeup remover ever!</h6>
+                                    <p>I've tried many makeup removers but this is by far the best. It removes even waterproof mascara without irritating my eyes. My skin feels clean and fresh after using it.</p>
+                                </div>
+                                <hr>
+                                <div class="review">
+                                    <div class="review-header d-flex justify-content-between mb-2">
+                                        <div>
+                                            <strong>Michael T.</strong>
+                                            <div class="stars">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <div class="text-muted">1 month ago</div>
+                                    </div>
+                                    <h6>Great product</h6>
+                                    <p>Works really well for daily cleansing. Doesn't dry out my skin like some other products. The bottle lasts a long time too.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="shipping" role="tabpanel">
+                            <h4>Shipping Information</h4>
+                            <p>We offer standard and express shipping options. Orders are typically processed within 1-2 business days.</p>
+                            <ul>
+                                <li><strong>Standard Shipping:</strong> 3-5 business days - $4.99 (Free for orders over $35)</li>
+                                <li><strong>Express Shipping:</strong> 1-2 business days - $9.99</li>
+                            </ul>
